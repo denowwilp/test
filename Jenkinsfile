@@ -3,15 +3,9 @@ pipeline {
 
     stages {
         stage('Build') {
-            agent any 
             steps {
-                echo 'Building Assets...'
-            }
-        }
-        stage('Test') {
-            agent any
-            steps {
-                echo 'Testing stuff...'
+                sh 'make' 
+                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
             }
         }
     }
