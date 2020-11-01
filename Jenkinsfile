@@ -14,10 +14,5 @@ pipeline {
                 echo 'Testing stuff...'
             }
         }
-        stage('Deploy') {
-            steps {
-                sh 'flakey-deploy.sh'
-            }
-        }
     }
 }
