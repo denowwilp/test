@@ -16,11 +16,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                timeout(time: 3, unit: 'MINUTES') {
-                    retry(5) {
-                        sh 'flakey-deploy.sh'
-                    }
-                }
+                sh 'flakey-deploy.sh'
             }
         }
     }
